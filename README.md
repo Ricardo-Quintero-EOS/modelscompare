@@ -60,6 +60,15 @@ Condividi `dist\modelscompare-windows-x64.zip`. Il collega estrae lo ZIP e avvia
 
 La build usa PyInstaller in modalità console; il pacchetto è per Windows x64 e non è firmato digitalmente. La wheel Python rimane disponibile con `python -m build --wheel` per chi preferisce installare da sorgente.
 
+Per pubblicare una release GitHub con EXE e ZIP allegati, crea e invia un tag versione dopo aver pubblicato le modifiche:
+
+```powershell
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+GitHub Actions crea la release automaticamente. Dopo la prima release, il pacchetto può essere proposto al catalogo pubblico winget; il comando `winget install` sarà disponibile quando il manifest verrà accettato.
+
 ## Sorgenti e test
 
 Il parser riconosce dinamicamente le tabelle di prezzo e i valori AI-credit/USD pubblicati; non mantiene elenchi statici di modelli. Le richieste di rete e il parsing sono separati per consentire test con fixture.
