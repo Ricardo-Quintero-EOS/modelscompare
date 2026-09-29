@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modelscompare"
+version = "0.1.0"
+description = "Browse live GitHub Copilot input, cached, and output pricing"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.12",
+    "openpyxl>=3.1",
+    "prompt-toolkit>=3.0.43",
+    "requests>=2.31",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+build = ["build>=1.2", "pyinstaller>=6.11"]
+
+[project.scripts]
+modelscompare = "modelscompare.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

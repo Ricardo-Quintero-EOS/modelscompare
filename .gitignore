@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+*.py[cod]
+copilot_models.csv
+copilot_models.xlsx
